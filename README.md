@@ -1,67 +1,95 @@
-# VC Intelligence Platform
+# 🚀 VC Intelligence Platform
 
-A modern, production-quality VC discovery and enrichment tool built with Next.js 14, Tailwind CSS, and Groq LLM.
+A high-performance, production-quality VC discovery and company enrichment interface designed for internal venture capital teams. Built with **Next.js 14**, **Groq AI**, and **Tailwind CSS**.
 
-## Project Overview
-
-This application serves as an internal tool for venture capitalists to discover companies, track potential investments, and enrich company profiles with AI-derived intelligence.
-
-## Tech Stack
-
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **LLM**: Groq (Llama 3.3 70B)
-- **Persistence**: LocalStorage (for demo purposes)
-
-## Key Features
-
-- **Company Discovery**: A sophisticated table interface with real-time filtering, sorting, and search.
-- **Deep Enrichment**: One-click company profile enrichment using the Groq API to extract structured intelligence from public data.
-- **Internal Notes**: Persistence of proprietary deal notes per company.
-- **Curated Lists**: Grouping companies into named lists with CSV/JSON export capabilities.
-- **Saved Searches**: Bookmarking complex search queries for pipeline monitoring.
-- **Premium UI**: Sleek, high-contrast interface with glassmorphism and smooth transitions.
-
-## Setup Instructions
-
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Environment Variables**:
-   Create a `.env.local` file in the root directory:
-   ```env
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
-
-3. **Run Development Server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for Production**:
-   ```bash
-   npm run build
-   ```
-
-## How Enrichment Works
-
-The enrichment feature utilizes a server-side API route (`/api/enrich`) that:
-1. Receives the company website and name.
-2. Simulates/Fetches public content from the homepage, Careers, and About sections.
-3. Sends the structured prompt and content to Groq's Llama 3.3 model.
-4. Returns a strictly formatted JSON object containing a summary, bullet points of "what they do", key signals (like hiring or geographic expansion), and keywords.
-5. results are cached in `localStorage` for fast retrieval and reduced API usage.
-
-## Deployment
-
-This app is optimized for deployment on **Vercel**. 
-- API routes are handled automatically as serverless functions.
-- Ensure `GROQ_API_KEY` is added to the project's environment variables in the Vercel dashboard.
+**Live Demo:** [https://vc-intelligence-interface-two.vercel.app/companies](https://vc-intelligence-interface-two.vercel.app/companies)
 
 ---
-*Built for the Senior Full-Stack Engineer Take-Home Assignment.*
+
+## 🏛️ System Architecture
+
+### 📊 Application Flow Diagram
+```mermaid
+graph TD
+    A[User/Browser] -->|Next.js App Router| B(Frontend: UI/UX)
+    B -->|Search/Filter| C[Client State: Filtering Logic]
+    B -->|Click Enrich| D[API Route: /api/enrich]
+    D -->|Secure Server-side| E[lib/enrich: LLM Service]
+    E -->|Context + Prompt| F[Groq AI: Llama 3.3 70B]
+    F -->|Structured JSON| E
+    E -->|JSON Response| D
+    D -->|State Update| B
+    B -->|Local Persistence| G[(LocalStorage: Notes & Lists)]
+```
+
+### 🧱 Project Structure
+- **Frontend**: Next.js (App Router), TypeScript, Tailwind CSS, Lucide Icons.
+- **Backend API**: Next.js Serverless Functions (`/api/enrich`).
+- **AI/LLM**: Groq API (Llama 3.3 70B Model) for deep company intelligence.
+- **Database**: `LocalStorage` for browser-based persistence (Notes, Lists, Searches).
+
+---
+
+## ✨ Key Features
+
+- **Company Discovery**: Responsive table with multi-criteria filtering (Industry, Stage) and real-time sorting.
+- **AI-Powered Enrichment**: One-click deep analysis using LLMs to extract signals, capabilities, and executive summaries.
+- **Workflow Tools**: 
+  - **Internal Notes**: Save deal-specific thoughts per company.
+  - **Custom Lists**: Organize companies into collections (e.g., "Q1 Fintech Pipeline").
+  - **Data Export**: Export curated lists to **CSV** or **JSON** for external reporting.
+- **Smart Search**: Persistent saved searches to track specific market segments.
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Prerequisites
+- Node.js 18.x or higher
+- NPM / Yarn / Bun
+
+### 2. Clone and Install
+```bash
+git clone https://github.com/ShreyashPatil530/vc-intelligence-interface.git
+cd vc-intelligence-interface
+npm install
+```
+
+### 3. Environment Variables
+Create a `.env.local` file in the root:
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+### 4. Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🤖 How the Enrichment Works
+
+The enrichment engine follows a strict server-side pipeline:
+1. **Request**: The frontend sends the company name and website URL to the backend.
+2. **Context Injection**: The backend retrieves context (simulated or real public data).
+3. **Structured Prompting**: A detailed system prompt instructs the Groq model to act as a **VC Analyst**.
+4. **Validation**: The model returns a strictly formatted JSON object containing:
+   - **Summary**: High-level executive overview.
+   - **Derived Signals**: Intelligence like "Hiring Momentum" or "Market Expansion".
+   - **Capabilities**: Bullet points of what they actually do.
+5. **Persistence**: The result is stored in the user's browser for instant retrieval on next visit.
+
+---
+
+## 🚢 Deployment (Vercel)
+
+The project is optimized for Vercel deployment:
+1. Push your code to your GitHub repo.
+2. Connect the repo to Vercel.
+3. Add the `GROQ_API_KEY` in the Vercel **Environment Variables** dashboard.
+4. Vercel will automatically handle the build and edge function deployment.
+
+---
+*Developed for the Senior Full-Stack Engineer Take-Home Assignment.*
