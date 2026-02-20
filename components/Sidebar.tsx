@@ -66,6 +66,9 @@ export default function Sidebar() {
                     <button className="w-full py-2 bg-white text-brand-700 text-xs font-bold rounded-lg hover:bg-brand-50 transition-colors">
                         Upgrade Now
                     </button>
+                    <div className="mt-4 pt-4 border-t border-brand-500/30 text-[10px] text-brand-200 font-medium text-center uppercase tracking-widest">
+                        Developed by Shreyash Patil
+                    </div>
                 </div>
             </div>
         </aside>

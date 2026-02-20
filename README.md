@@ -92,4 +92,4 @@ The project is optimized for Vercel deployment:
 4. Vercel will automatically handle the build and edge function deployment.
 
 ---
-*Developed for the Senior Full-Stack Engineer Take-Home Assignment.*
+*Developed by **Shreyash Patil** for the Senior Full-Stack Engineer Take-Home Assignment.*
