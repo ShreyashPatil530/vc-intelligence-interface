@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "name": "Acme Dynamics",
+        "website": "https://acmedynamics.com",
+        "industry": "Robotics",
+        "stage": "Series B",
+        "location": "San Francisco, CA",
+        "description": "Building the next generation of industrial automation robots with AI integration."
+    },
+    {
+        "id": "2",
+        "name": "BioFlow Labs",
+        "website": "https://bioflowlabs.com",
+        "industry": "Biotech",
+        "stage": "Seed",
+        "location": "Boston, MA",
+        "description": "Revolutionizing drug discovery using microfluidic simulation technology."
+    },
+    {
+        "id": "3",
+        "name": "CloudNine Security",
+        "website": "https://cloudninesecurity.io",
+        "industry": "Cybersecurity",
+        "stage": "Series A",
+        "location": "Austin, TX",
+        "description": "Zero-trust network security for remote-first enterprise teams."
+    },
+    {
+        "id": "4",
+        "name": "DeFi Edge",
+        "website": "https://defiedge.xyz",
+        "industry": "Fintech",
+        "stage": "Pre-seed",
+        "location": "London, UK",
+        "description": "Simplified yield optimization for decentralized finance users."
+    },
+    {
+        "id": "5",
+        "name": "EcoStore Logistics",
+        "website": "https://ecostore.tech",
+        "industry": "Supply Chain",
+        "stage": "Series C",
+        "location": "Berlin, Germany",
+        "description": "Sustainable last-mile delivery solutions for e-commerce giants."
+    },
+    {
+        "id": "6",
+        "name": "FutureMind AI",
+        "website": "https://futuremind.ai",
+        "industry": "AI/NLP",
+        "stage": "Series A",
+        "location": "Toronto, Canada",
+        "description": "Advanced sentiment analysis for customer support automation."
+    },
+    {
+        "id": "7",
+        "name": "Solaris Energy",
+        "website": "https://solaris-energy.com",
+        "industry": "CleanTech",
+        "stage": "Seed",
+        "location": "Denver, CO",
+        "description": "High-efficiency perovskite solar cells for residential use."
+    },
+    {
+        "id": "8",
+        "name": "HealthSync",
+        "website": "https://healthsync.health",
+        "industry": "HealthTech",
+        "stage": "Series B",
+        "location": "Seattle, WA",
+        "description": "Unified platform for patient data interoperability between hospitals."
+    }
+]
